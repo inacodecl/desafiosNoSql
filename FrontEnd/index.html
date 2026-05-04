@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoSQL Challenge — BDNE Unidad 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     TOPBAR
+══════════════════════════════════ -->
+<header class="topbar">
+  <div class="top-logo" onclick="showPage('landing', document.querySelector('[data-page=landing]'))">
+    <div class="top-logo-box">N</div>
+    <div>
+      <div class="top-logo-text">NoSQL Challenge</div>
+      <div class="top-logo-sub">BDNE · Unidad 3</div>
+    </div>
+  </div>
+
+  <nav class="top-nav">
+    <button class="tnav active" data-page="landing"  onclick="showPage('landing',  this)">Módulos</button>
+    <button class="tnav"        data-page="leccion"  onclick="showPage('leccion',  this)">Lección</button>
+    <button class="tnav"        data-page="ranking"  onclick="showPage('ranking',  this)">Ranking</button>
+  </nav>
+
+  <div class="top-spacer"></div>
+  <span class="top-score">220 pts</span>
+  <div class="top-avatar">JR</div>
+</header>
+
+
+<!-- ══════════════════════════════════
+     PAGE 1 — MÓDULO / LANDING
+══════════════════════════════════ -->
+<div id="page-landing" class="page active">
+
+  <!-- Hero -->
+  <section class="module-hero">
+    <div class="module-hero-inner">
+      <div class="mh-tags">
+        <span class="mh-tag">3 HRS</span>
+        <span class="mh-tag">GRADO 10</span>
+        <span class="mh-tag">ES</span>
+      </div>
+      <p class="mh-subtitle">Bases de Datos No Estructurada 1</p>
+      <h1 class="mh-title">NoSQL Challenge</h1>
+      <p class="mh-desc">
+        Aprende a trabajar con bases de datos no relacionales: desde documentos y
+        colecciones en MongoDB hasta pipelines de agregación avanzados, replicación
+        y alta disponibilidad.
+      </p>
+      <div class="mh-actions">
+        <button class="btn-outline">↺ Restablecer módulo</button>
+        <button class="btn-outline">📋 Planes de lección</button>
+        <button class="btn-primary"
+                onclick="showPage('leccion', document.querySelector('[data-page=leccion]'))">
+          ▶ Continuar
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body -->
+  <div class="module-body">
+
+    <p class="module-desc-box">
+      Las bases de datos no estructuradas son fundamentales en el desarrollo moderno.
+      En este módulo aprenderás qué son, cómo diseñarlas y operarlas, los diferentes
+      tipos disponibles y cómo elegir la mejor solución para cada problema de datos.
+    </p>
+
+    <div class="lessons-grid">
+
+      <!-- ── Lessons list ── -->
+      <div class="lessons-panel">
+        <div class="lp-header">
+          <span class="lp-title">Sesiones 1 – 4</span>
+          <span class="lp-progress">2 de 4 Finalizadas</span>
+        </div>
+
+        <!-- ─── SESIÓN 1 (completa ★★★) ─── -->
+        <div class="session-header-row"
+             onclick="showPage('leccion', document.querySelector('[data-page=leccion]'))">
+          <div class="lr-num">1</div>
+          <div class="lr-name bold">Intro a MongoDB</div>
+          <div class="lr-stars">
+            <span class="stars-3">
+              <span class="s3 on">★</span>
+              <span class="s3 on">★</span>
+              <span class="s3 on">★</span>
+            </span>
+          </div>
+          <div class="lr-badge"><span class="pts-badge">90</span></div>
+        </div>
+
+        <div class="lesson-row"
+             onclick="showPage('leccion', document.querySelector('[data-page=leccion]'))">
+          <div class="lr-num">1.1</div>
+          <div class="lr-name">Documentos y colecciones</div>
+          <div class="lr-stars">
+            <span class="stars-3">
+              <span class="s3 on">★</span><span class="s3 on">★</span><span class="s3 on">★</span>
+            </span>
+          </div>
+          <div class="lr-badge"><span class="pts-badge">30</span></div>
+        </div>
+
+        <div class="lesson-row"
+             onclick="showPage('leccion', document.querySelector('[data-page=leccion]'))">
+          <div class="lr-num">1.2</div>
+          <div class="lr-name">Primeras consultas</div>
+          <div class="lr-stars">
+            <span class="stars-3">
+              <span class="s3 on">★</span><span class="s3 on">★</span><span class="s3 off">☆</span>
+            </span>
+          </div>
+          <div class="lr-badge"><span class="pts-badge partial">20</span></div>
+        </div>
+
+        <div class="lesson-row"
+             onclick="showPage('leccion', document.querySelector('[data-page=leccion]'))">
+          <div class="lr-num">1.3</div>
+          <div class="lr-name">🔥 Boss: Shell avanzado</div>
+          <div class="lr-stars">
+            <span class="stars-3">
+              <span class="s3 on">★</span><span class="s3 on">★</span><span class="s3 on">★</span>
+            </span>
+          </div>
+          <div class="lr-badge"><span class="pts-badge">30</span></div>
+        </div>
+
+        <!-- ─── SESIÓN 2 (completa ★★★) ─── -->
+        <div class="session-header-row"
+             onclick="showPage('leccion', document.querySelector('[data-page=leccion]'))">
+          <div class="lr-num">2</div>
+          <div class="lr-name bold">Consultas CRUD</div>
+          <div class="lr-stars">
+            <span class="stars-3">
+              <span class="s3 on">★</span><span class="s3 on">★</span><span class="s3 on">★</span>
+            </span>
+          </div>
+          <div class="lr-badge"><span class="pts-badge">90</span></div>
+        </div>
+
+        <div class="lesson-row"
+             onclick="showPage('leccion', document.querySelector('[data-page=leccion]'))">
+          <div class="lr-num">2.1</div>
+          <div class="lr-name">insertOne / insertMany</div>
+          <div class="lr-stars">
+            <span class="stars-3">
+              <span class="s3 on">★</span><span class="s3 on">★</span><span class="s3 on">★</span>
+            </span>
+          </div>
+          <div class="lr-badge"><span class="pts-badge">30</span></div>
+        </div>
+
+        <div class="lesson-row"
+             onclick="showPage('leccion', document.querySelector('[data-page=leccion]'))">
+          <div class="lr-num">2.2</div>
+          <div class="lr-name">find y updateOne</div>
+          <div class="lr-stars">
+            <span class="stars-3">
+              <span class="s3 on">★</span><span class="s3 on">★</span><span class="s3 on">★</span>
+            </span>
+          </div>
+          <div class="lr-badge"><span class="pts-badge">30</span></div>
+        </div>
+
+        <div class="lesson-row"
+             onclick="showPage('leccion', document.querySelector('[data-page=leccion]'))">
+          <div class="lr-num">2.3</div>
+          <div class="lr-name">🔥 Boss: deleteMany</div>
+          <div class="lr-stars">
+            <span class="stars-3">
+              <span class="s3 on">★</span><span class="s3 on">★</span><span class="s3 on">★</span>
+            </span>
+          </div>
+          <div class="lr-badge"><span class="pts-badge">30</span></div>
+        </div>
+
+        <!-- ─── SESIÓN 3 (activa ★☆☆) ─── -->
+        <div class="session-header-row active-session"
+             onclick="showPage('leccion', document.querySelector('[data-page=leccion]'))">
+          <div class="lr-num" style="color:var(--amber)">3</div>
+          <div class="lr-name bold">
+            Agregaciones
+            <span class="badge badge-amber" style="margin-left:6px">● En curso</span>
+          </div>
+          <div class="lr-stars">
+            <span class="stars-3">
+              <span class="s3 on">★</span><span class="s3 off">☆</span><span class="s3 off">☆</span>
+            </span>
+          </div>
+          <div class="lr-badge"><span class="pts-time">0 / 90</span></div>
+        </div>
+
+        <div class="lesson-row active-lesson"
+             onclick="showPage('leccion', document.querySelector('[data-page=leccion]'))">
+          <div class="lr-num" style="color:var(--amber)">3.1</div>
+          <div class="lr-name bold">Pipeline básico ← aquí</div>
+          <div class="lr-stars">
+            <span class="stars-3">
+              <span class="s3 off">☆</span><span class="s3 off">☆</span><span class="s3 off">☆</span>
+            </span>
+          </div>
+          <div class="lr-badge"><span class="pts-time">15 min</span></div>
+        </div>
+
+        <div class="lesson-row locked">
+          <div class="lr-num">3.2</div>
+          <div class="lr-name">$lookup y joins</div>
+          <div class="lr-stars">
+            <span class="stars-3">
+              <span class="s3 off">☆</span><span class="s3 off">☆</span><span class="s3 off">☆</span>
+            </span>
+          </div>
+          <div class="lr-badge"><span class="pts-time">15 min</span></div>
+        </div>
+
+        <div class="lesson-row locked">
+          <div class="lr-num">3.3</div>
+          <div class="lr-name">🔥 Boss: Pipeline complejo</div>
+          <div class="lr-stars">
+            <span class="stars-3">
+              <span class="s3 off">☆</span><span class="s3 off">☆</span><span class="s3 off">☆</span>
+            </span>
+          </div>
+          <div class="lr-badge"><span class="pts-time">15 min</span></div>
+        </div>
+
+        <!-- ─── SESIÓN 4 (bloqueada) ─── -->
+        <div class="session-header-row locked">
+          <div class="lr-num">4</div>
+          <div class="lr-name bold">
+            Replicación
+            <span class="badge badge-gray" style="margin-left:6px">🔒 Bloqueada</span>
+          </div>
+          <div class="lr-stars">
+            <span class="stars-3">
+              <span class="s3 off">☆</span><span class="s3 off">☆</span><span class="s3 off">☆</span>
+            </span>
+          </div>
+          <div class="lr-badge"><span class="pts-time">—</span></div>
+        </div>
+
+        <div class="lesson-row locked">
+          <div class="lr-num">4.1</div>
+          <div class="lr-name">Replica sets</div>
+          <div class="lr-stars"></div>
+          <div class="lr-badge"><span class="pts-time">15 min</span></div>
+        </div>
+
+        <div class="lesson-row locked">
+          <div class="lr-num">4.2</div>
+          <div class="lr-name">Alta disponibilidad</div>
+          <div class="lr-stars"></div>
+          <div class="lr-badge"><span class="pts-time">15 min</span></div>
+        </div>
+
+        <div class="lesson-row locked">
+          <div class="lr-num">4.3</div>
+          <div class="lr-name">🔥 Boss: Tolerancia a fallos</div>
+          <div class="lr-stars"></div>
+          <div class="lr-badge"><span class="pts-time">15 min</span></div>
+        </div>
+
+      </div><!-- /lessons-panel -->
+
+      <!-- ── Sidebar ── -->
+      <div class="side-panel">
+
+        <!-- Quizzes -->
+        <div class="quizzes-panel">
+          <div class="qp-header">
+            <span class="qp-title">Cuestionarios</span>
+            <span class="qp-prog">0 de 1 Finalizado</span>
+          </div>
+          <div class="quiz-item">
+            <span class="qi-name">Introducción a NoSQL</span>
+            <span class="qi-time">15 min</span>
+          </div>
+        </div>
+
+        <!-- Progress card -->
+        <div class="progress-card">
+          <div class="pc-top">
+            <div class="pc-avatar">JR</div>
+            <div>
+              <div class="pc-name">Juan Rodríguez</div>
+              <div class="pc-sub">Sección 3B · INACAP</div>
+            </div>
+            <div class="pc-score">
+              <div class="pc-score-num">220</div>
+              <div class="pc-score-label">puntos</div>
+            </div>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:61%"></div>
+          </div>
+          <p class="progress-meta">220 / 360 pts · Posición <strong>#3</strong> en el ranking</p>
+
+          <!-- Stars per session summary -->
+          <p class="section-label">Estrellas por sesión</p>
+          <div class="session-stars-summary">
+            <div class="sss-item">
+              <span class="sss-label">Sesión 1</span>
+              <div class="sss-stars">
+                <span class="s3 on">★</span><span class="s3 on">★</span><span class="s3 on">★</span>
+              </div>
+            </div>
+            <div class="sss-item">
+              <span class="sss-label">Sesión 2</span>
+              <div class="sss-stars">
+                <span class="s3 on">★</span><span class="s3 on">★</span><span class="s3 on">★</span>
+              </div>
+            </div>
+            <div class="sss-item">
+              <span class="sss-label">Sesión 3</span>
+              <div class="sss-stars">
+                <span class="s3 on">★</span><span class="s3 off">☆</span><span class="s3 off">☆</span>
+              </div>
+            </div>
+            <div class="sss-item">
+              <span class="sss-label">Sesión 4</span>
+              <div class="sss-stars">
+                <span class="s3 off">☆</span><span class="s3 off">☆</span><span class="s3 off">☆</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-primary" style="width:100%;justify-content:center"
+                  onclick="showPage('ranking', document.querySelector('[data-page=ranking]'))">
+            Ver ranking 🏆
+          </button>
+        </div>
+
+      </div><!-- /side-panel -->
+
+    </div><!-- /lessons-grid -->
+  </div><!-- /module-body -->
+</div><!-- /page-landing -->
+
+
+<!-- ══════════════════════════════════
+     PAGE 2 — LECCIÓN / DESAFÍO
+══════════════════════════════════ -->
+<div id="page-leccion" class="page">
+  <div class="lesson-layout">
+
+    <!-- ── Left sidebar ── -->
+    <aside class="lesson-sidebar">
+      <div class="ls-topbar">
+        <span class="ls-label">Sesión 3 · Desafío 3.1</span>
+        <div class="ls-progress-dots">
+          <div class="ls-dot done"></div>
+          <div class="ls-dot done"></div>
+          <div class="ls-dot cur"></div>
+          <div class="ls-dot"></div>
+          <div class="ls-dot"></div>
+        </div>
+      </div>
+
+      <div class="ls-banner">
+        <div class="ls-banner-content">
+          <div class="ls-banner-icon">🤖</div>
+          <div class="ls-banner-tag">NoSQL Challenge</div>
+        </div>
+      </div>
+
+      <div class="ls-scroll">
+        <h3>Instrucciones informales en pipelines</h3>
+
+        <p>
+          ¡Bien hecho! El sistema de datos está listo para procesar consultas.
+          Pero nuestro jefe robot, <span class="highlight">Ross</span>, dice que los
+          pipelines deben ser <span class="text-bold">exactos y precisos</span>.
+          ¡Si faltan parámetros, el sistema falla!
+        </p>
+
+        <p>
+          No te preocupes, <span class="highlight green">no es tu culpa</span>.
+          Los pipelines que necesitan suposiciones son los problemáticos.
+        </p>
+
+        <p>
+          <span class="text-bold">Tuviste que adivinar y suponer</span>
+          qué quería el sistema. Los pipelines que
+          <span class="text-bold">necesitan suposiciones</span> se llaman
+          <span class="highlight">pipelines informales</span>.
+        </p>
+
+        <div class="ls-tip">
+          <strong>Responde las preguntas de opción múltiple</strong>
+          en el panel derecho.<br>
+          <ol>
+            <li>Haz clic en la respuesta correcta. Aparecerá resaltada.</li>
+            <li>Si seleccionas la incorrecta, intenta de nuevo.</li>
+            <li>Cuando termines, haz clic en <strong>CHECK ✓</strong>.</li>
+          </ol>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ── Right activity panel ── -->
+    <div class="lesson-main">
+
+      <div class="lm-bar">
+        <div class="lm-task-chip">Para comprender lo que sucedió</div>
+        <div class="lm-spacer"></div>
+        <button class="lm-next-btn">→ Siguiente</button>
+        <button class="lm-icon-btn" title="Reiniciar">↺</button>
+        <button class="lm-icon-btn" title="Ayuda">?</button>
+        <button class="lm-check-btn" onclick="checkAnswers()">✓ CHECK</button>
+      </div>
+
+      <div class="lm-scroll">
+
+        <!-- Q1 -->
+        <div class="mc-question">
+          <p class="mc-q-num">Pregunta 1 de 3</p>
+          <p class="mc-q-text">Los pipelines informales…</p>
+          <div class="mc-opts-row">
+            <button class="mc-opt" onclick="selectOpt(this, 'q1')">son claros y fáciles de seguir.</button>
+            <button class="mc-opt" onclick="selectOpt(this, 'q1')">necesitan suposiciones.</button>
+            <button class="mc-opt" onclick="selectOpt(this, 'q1')">son incorrectos.</button>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="mc-question">
+          <p class="mc-q-num">Pregunta 2 de 3</p>
+          <p class="mc-q-text">Fue imposible construir el pipeline como Ross quería porque…</p>
+          <div class="mc-options">
+            <button class="mc-opt" onclick="selectOpt(this, 'q2')">no me dijeron qué campo usar como clave de agrupación.</button>
+            <button class="mc-opt" onclick="selectOpt(this, 'q2')">no me dijeron cuántos documentos existían en la colección.</button>
+            <button class="mc-opt" onclick="selectOpt(this, 'q2')">no me dijeron que debía ordenar los resultados de mayor a menor.</button>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="mc-question">
+          <p class="mc-q-num">Pregunta 3 de 3</p>
+          <p class="mc-q-text">Una instrucción de pipeline más precisa habría sido…</p>
+          <div class="mc-options">
+            <button class="mc-opt" onclick="selectOpt(this, 'q3')">Agrupa los documentos por categoría.</button>
+            <button class="mc-opt" onclick="selectOpt(this, 'q3')">Usa $match con { precio: { $gt: 1000 } }, luego $group por "categoria" sumando "total", ordena con $sort de mayor a menor.</button>
+            <button class="mc-opt" onclick="selectOpt(this, 'q3')">Filtra y agrupa los productos.</button>
+          </div>
+        </div>
+
+        <div id="feedback-box" class="feedback-box"></div>
+
+      </div><!-- /lm-scroll -->
+    </div><!-- /lesson-main -->
+
+  </div><!-- /lesson-layout -->
+</div><!-- /page-leccion -->
+
+
+<!-- ══════════════════════════════════
+     PAGE 3 — RANKING
+══════════════════════════════════ -->
+<div id="page-ranking" class="page">
+  <div class="ranking-page">
+
+    <!-- Hero -->
+    <div class="rank-hero">
+      <div class="rh-icon">🏆</div>
+      <div class="rh-text">
+        <h2 class="rh-title">Ranking — Sesión 3</h2>
+        <p class="rh-sub">Agregaciones · NoSQL Challenge BDNE Unidad 3</p>
+      </div>
+      <div class="rh-my-score">
+        <div class="rh-score-num">220</div>
+        <div class="rh-score-label">tus puntos</div>
+        <div class="rh-score-stars">
+          <span class="rhs">★</span>
+          <span class="rhs">★</span>
+          <span class="rhs off">★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="sc-num" style="color:var(--teal-dark)">18</div>
+        <div class="sc-label">Estudiantes activos</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num" style="color:var(--amber)">185</div>
+        <div class="sc-label">Promedio clase</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num" style="color:var(--purple)">7/12</div>
+        <div class="sc-label">Tus desafíos</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num" style="color:var(--blue)">#3</div>
+        <div class="sc-label">Tu posición</div>
+      </div>
+    </div>
+
+    <!-- Podium -->
+    <div class="podium-card">
+      <div class="podium-title">🎖 Podio — Top 3</div>
+      <div class="podium">
+
+        <div class="pod-item p2">
+          <div class="pod-av" style="width:52px;height:52px;font-size:16px;background:#dbeafe;color:#1e40af">CS</div>
+          <div class="pod-name">Carlos Silva</div>
+          <div class="pod-block">
+            <div class="pod-pos">🥈 2°</div>
+            <div class="pod-pts">240 pts</div>
+          </div>
+        </div>
+
+        <div class="pod-item p1">
+          <div class="pod-av" style="width:64px;height:64px;font-size:20px;background:#fef3c7;color:#92400e">AM</div>
+          <div class="pod-name">Ana Martínez</div>
+          <div class="pod-block">
+            <div class="pod-pos">🥇 1°</div>
+            <div class="pod-pts">310 pts</div>
+          </div>
+        </div>
+
+        <div class="pod-item p3">
+          <div class="pod-av" style="width:48px;height:48px;font-size:15px;background:#d1fae5;color:#065f46">JR</div>
+          <div class="pod-name">
+            Juan R.
+            <span style="font-size:9px;background:var(--teal);color:white;border-radius:99px;padding:1px 6px;margin-left:3px">tú</span>
+          </div>
+          <div class="pod-block">
+            <div class="pod-pos">🥉 3°</div>
+            <div class="pod-pts">220 pts</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Full table -->
+    <p class="section-label">Tabla completa</p>
+    <div class="rank-table-card">
+      <div class="rt-head">
+        <div>#</div>
+        <div>Estudiante</div>
+        <div style="text-align:center">Estrellas</div>
+        <div style="text-align:right">Puntos</div>
+        <div style="text-align:center">Tendencia</div>
+      </div>
+
+      <!-- Row 1 -->
+      <div class="rt-row">
+        <div class="rt-pos" style="color:var(--amber)">🥇</div>
+        <div class="rt-player">
+          <div class="rt-av" style="background:#fef3c7;color:#92400e">AM</div>
+          <div class="rt-name-wrap">
+            <div class="rt-name">Ana Martínez</div>
+            <div class="rt-sec">Sección 3A</div>
+          </div>
+        </div>
+        <div class="rt-stars-cell">
+          <span class="s3 on">★</span><span class="s3 on">★</span><span class="s3 on">★</span>
+        </div>
+        <div class="rt-pts">310</div>
+        <div class="rt-trend" style="color:var(--green)">↑ +20</div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="rt-row">
+        <div class="rt-pos" style="color:#60a5fa">🥈</div>
+        <div class="rt-player">
+          <div class="rt-av" style="background:#dbeafe;color:#1e40af">CS</div>
+          <div class="rt-name-wrap">
+            <div class="rt-name">Carlos Silva</div>
+            <div class="rt-sec">Sección 3B</div>
+          </div>
+        </div>
+        <div class="rt-stars-cell">
+          <span class="s3 on">★</span><span class="s3 on">★</span><span class="s3 on">★</span>
+        </div>
+        <div class="rt-pts">240</div>
+        <div class="rt-trend" style="color:var(--green)">↑ +10</div>
+      </div>
+
+      <!-- Row 3 — ME -->
+      <div class="rt-row me">
+        <div class="rt-pos" style="color:var(--teal)">🥉</div>
+        <div class="rt-player">
+          <div class="rt-av" style="background:var(--teal-bg);color:var(--teal-dark)">JR</div>
+          <div class="rt-name-wrap">
+            <div class="rt-name">Juan Rodríguez <span class="me-pill">tú</span></div>
+            <div class="rt-sec">Sección 3B</div>
+          </div>
+        </div>
+        <div class="rt-stars-cell">
+          <span class="s3 on">★</span><span class="s3 on">★</span><span class="s3 off">☆</span>
+        </div>
+        <div class="rt-pts">220</div>
+        <div class="rt-trend" style="color:var(--gr400)">— 0</div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="rt-row">
+        <div class="rt-pos" style="color:var(--gr400)">4</div>
+        <div class="rt-player">
+          <div class="rt-av" style="background:var(--purple-bg);color:var(--purple-dark)">VL</div>
+          <div class="rt-name-wrap">
+            <div class="rt-name">Valentina López</div>
+            <div class="rt-sec">Sección 3A</div>
+          </div>
+        </div>
+        <div class="rt-stars-cell">
+          <span class="s3 on">★</span><span class="s3 on">★</span><span class="s3 off">☆</span>
+        </div>
+        <div class="rt-pts" style="color:var(--gr500)">190</div>
+        <div class="rt-trend" style="color:var(--red)">↓ −5</div>
+      </div>
+
+      <!-- Row 5 -->
+      <div class="rt-row">
+        <div class="rt-pos" style="color:var(--gr400)">5</div>
+        <div class="rt-player">
+          <div class="rt-av" style="background:var(--gr100);color:var(--gr500)">PM</div>
+          <div class="rt-name-wrap">
+            <div class="rt-name">Pedro Muñoz</div>
+            <div class="rt-sec">Sección 3B</div>
+          </div>
+        </div>
+        <div class="rt-stars-cell">
+          <span class="s3 on">★</span><span class="s3 off">☆</span><span class="s3 off">☆</span>
+        </div>
+        <div class="rt-pts" style="color:var(--gr500)">150</div>
+        <div class="rt-trend" style="color:var(--green)">↑ +15</div>
+      </div>
+
+      <!-- Row 6 -->
+      <div class="rt-row">
+        <div class="rt-pos" style="color:var(--gr400)">6</div>
+        <div class="rt-player">
+          <div class="rt-av" style="background:#fce7f3;color:#9d174d">MG</div>
+          <div class="rt-name-wrap">
+            <div class="rt-name">María González</div>
+            <div class="rt-sec">Sección 3A</div>
+          </div>
+        </div>
+        <div class="rt-stars-cell">
+          <span class="s3 on">★</span><span class="s3 off">☆</span><span class="s3 off">☆</span>
+        </div>
+        <div class="rt-pts" style="color:var(--gr500)">120</div>
+        <div class="rt-trend" style="color:var(--gr400)">— 0</div>
+      </div>
+
+    </div><!-- /rank-table-card -->
+
+  </div><!-- /ranking-page -->
+</div><!-- /page-ranking -->
+
+
+<script src="script.js"></script>
+</body>
+</html>
