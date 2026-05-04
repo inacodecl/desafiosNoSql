@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyber-bg:     #020c1b;
+  --cyber-card:   #0a1628;
+  --cyber-border: #1e3a5f;
+  --cyber-glow:   #00d4ff;
+  --teal:         #14b8a6;
+  --teal-bright:  #2dd4bf;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--cyber-bg);
+  color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cyber-card); }
+::-webkit-scrollbar-thumb { background: var(--cyber-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--teal); }
+
+/* ── Cyber card ── */
+.cyber-card {
+  background: var(--cyber-card);
+  border: 1px solid var(--cyber-border);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyber-glow), transparent);
+  opacity: 0.6;
+}
+
+/* ── Glow button ── */
+.btn-glow {
+  background: linear-gradient(135deg, #0d9488, #14b8a6);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 20px #14b8a644, 0 0 40px #14b8a622;
+  transform: translateY(-1px);
+}
+
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.4s ease;
+}
+
+.btn-glow:hover::after { left: 100%; }
+
+/* ── Neon text ── */
+.neon-text {
+  color: var(--cyber-glow);
+  text-shadow: 0 0 10px var(--cyber-glow), 0 0 20px var(--cyber-glow)44;
+}
+
+.teal-text {
+  color: var(--teal-bright);
+  text-shadow: 0 0 8px var(--teal)44;
+}
+
+/* ── Input cyber ── */
+.cyber-input {
+  background: rgba(14, 26, 46, 0.8);
+  border: 1px solid var(--cyber-border);
+  border-radius: 8px;
+  color: #e2e8f0;
+  transition: all 0.2s ease;
+  outline: none;
+  width: 100%;
+  padding: 10px 14px;
+  font-family: 'Inter', sans-serif;
+}
+
+.cyber-input:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px #14b8a622;
+}
+
+.cyber-input::placeholder { color: #475569; }
+
+/* ── Grid background ── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* ── Scan line animation ── */
+.scan-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(transparent, var(--cyber-glow)22, transparent);
+  animation: scanLine 4s linear infinite;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── Star rating ── */
+.star-filled { color: #14b8a6; filter: drop-shadow(0 0 4px #14b8a688); }
+.star-empty  { color: #1e3a5f; }
+
+/* ── Table cyber ── */
+.cyber-table { width: 100%; border-collapse: collapse; }
+.cyber-table th {
+  background: rgba(14, 116, 144, 0.15);
+  color: var(--teal-bright);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--cyber-border);
+}
+.cyber-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(30, 58, 95, 0.5);
+  color: #cbd5e1;
+  font-size: 14px;
+}
+.cyber-table tr:hover td { background: rgba(14, 116, 144, 0.07); }
+
+/* ── Modal ── */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(2, 12, 27, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-flex; align-items: center;
+  padding: 2px 10px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* ── Progress bar ── */
+.progress-bar {
+  height: 6px;
+  background: rgba(30, 58, 95, 0.6);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0d9488, #2dd4bf);
+  border-radius: 99px;
+  transition: width 0.8s ease;
+  box-shadow: 0 0 8px #14b8a644;
+}
+
+/* ── Fade in ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 0.4s ease forwards; }
+
+/* ── Particle canvas ── */
+#particle-canvas {
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
